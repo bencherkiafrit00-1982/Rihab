@@ -1,0 +1,383 @@
+export interface MultiplayerQuestion {
+  id: string;
+  unitNumber: number;
+  category: string;
+  questionAr: string;
+  questionEn: string;
+  options: { id: string; text: string; emoji?: string; ar?: string }[];
+  correctAnswerId: string;
+  explanationAr: string;
+  timeLimitSec: number;
+}
+
+export const MULTIPLAYER_QUESTIONS: MultiplayerQuestion[] = [
+  // Unit 0 & 1: Greetings & School
+  {
+    id: 'mp-1',
+    unitNumber: 0,
+    category: 'التحيات والتعارف',
+    questionAr: 'ما هي التحية الإنجليزية التي نقولها في الصباح الباكر؟',
+    questionEn: 'Which greeting do we use in the early morning?',
+    options: [
+      { id: 'a', text: 'Good morning', emoji: '🌅', ar: 'صباح الخير' },
+      { id: 'b', text: 'Good evening', emoji: '🌆', ar: 'مساء الخير' },
+      { id: 'c', text: 'Good night', emoji: '🌙', ar: 'تصبح على خير' },
+      { id: 'd', text: 'Goodbye', emoji: '👋', ar: 'إلى اللقاء' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'في الصباح نقول Good morning، وفي المساء نقول Good evening.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-2',
+    unitNumber: 0,
+    category: 'الأرقام',
+    questionAr: 'كم يساوي حاصل جمع: Ten (10) + Five (5) بالإنجليزية؟',
+    questionEn: 'What is: Ten (10) + Five (5)?',
+    options: [
+      { id: 'a', text: 'Twelve (12)', emoji: '🔢', ar: 'اثنا عشر' },
+      { id: 'b', text: 'Fifteen (15)', emoji: '⭐', ar: 'خمسة عشر' },
+      { id: 'c', text: 'Twenty (20)', emoji: '🔟', ar: 'عشرون' },
+      { id: 'd', text: 'Fourteen (14)', emoji: '🔢', ar: 'أربعة عشر' },
+    ],
+    correctAnswerId: 'b',
+    explanationAr: '10 + 5 = 15 وهو Fifteen بالإنجليزية.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-3',
+    unitNumber: 1,
+    category: 'الأدوات المدرسية',
+    questionAr: 'ما هو اسم الأداة التي نبري بها القلم الرصاص (صفحة 14 من الكتاب)؟',
+    questionEn: 'What tool do we use to sharpen a pencil?',
+    options: [
+      { id: 'a', text: 'Pencil sharpener', emoji: '✏️', ar: 'مبراة' },
+      { id: 'b', text: 'Rubber / Eraser', emoji: '🧼', ar: 'ممحاة' },
+      { id: 'c', text: 'Ruler', emoji: '📏', ar: 'مسطرة' },
+      { id: 'd', text: 'School bag', emoji: '🎒', ar: 'محفظة' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'المبراة في كتاب 4PS تسمى Pencil sharpener.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-4',
+    unitNumber: 1,
+    category: 'التعريف بالنفس',
+    questionAr: 'كيف يسأل نجيب صديقه الجديد عن اسمه؟',
+    questionEn: 'How does Nadjib ask his new friend for his name?',
+    options: [
+      { id: 'a', text: 'What is your name?', emoji: '👦🏻', ar: 'ما اسمك؟' },
+      { id: 'b', text: 'How old are you?', emoji: '🎂', ar: 'كم عمرك؟' },
+      { id: 'c', text: 'Where do you live?', emoji: '🏠', ar: 'أين تسكن؟' },
+      { id: 'd', text: 'How are you?', emoji: '😊', ar: 'كيف حالك؟' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'للسؤال عن الاسم بالإنجليزية نقول: What is your name?',
+    timeLimitSec: 15,
+  },
+
+  // Unit 2: Family & Relatives
+  {
+    id: 'mp-5',
+    unitNumber: 2,
+    category: 'العائلة والأقارب',
+    questionAr: 'من هو "Grandfather" في شجرة العائلة الجزائرية؟',
+    questionEn: 'Who is "Grandfather" in the family tree?',
+    options: [
+      { id: 'a', text: 'الجد 👴🏻', emoji: '👴🏻', ar: 'الجد' },
+      { id: 'b', text: 'العم أو الخال 🧔🏻', emoji: '🧔🏻', ar: 'Uncle' },
+      { id: 'c', text: 'الأب 👨🏻', emoji: '👨🏻', ar: 'Father' },
+      { id: 'd', text: 'الأخ 👦🏻', emoji: '👦🏻', ar: 'Brother' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'Grandfather هو الجد، وGrandmother هي الجدة.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-6',
+    unitNumber: 2,
+    category: 'العائلة',
+    questionAr: 'ما هي الكلمة الإنجليزية المقابلة لـ "العمة أو الخالة"؟',
+    questionEn: 'What is the English word for aunt?',
+    options: [
+      { id: 'a', text: 'Aunt', emoji: '🧕🏻', ar: 'العمة / الخالة' },
+      { id: 'b', text: 'Uncle', emoji: '🧔🏻', ar: 'العم / الخال' },
+      { id: 'c', text: 'Cousin', emoji: '👦🏻', ar: 'ابن العم / الخال' },
+      { id: 'd', text: 'Sister', emoji: '👧🏻', ar: 'الأخت' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'Aunt تعني العمة أو الخالة، وUncle يعني العم أو الخال.',
+    timeLimitSec: 15,
+  },
+
+  // Unit 3: Occupations & Jobs
+  {
+    id: 'mp-7',
+    unitNumber: 3,
+    category: 'المهن والوظائف',
+    questionAr: 'الشخص الذي يعالج المرضى في المستشفى يسمى:',
+    questionEn: 'The person who helps sick people is a:',
+    options: [
+      { id: 'a', text: 'Doctor', emoji: '🩺', ar: 'طبيب' },
+      { id: 'b', text: 'Teacher', emoji: '👨‍🏫', ar: 'معلم' },
+      { id: 'c', text: 'Carpenter', emoji: '🪚', ar: 'نجار' },
+      { id: 'd', text: 'Farmer', emoji: '🚜', ar: 'فلاح' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'Doctor هو الطبيب أو الطبيبة.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-8',
+    unitNumber: 3,
+    category: 'المهن',
+    questionAr: 'ما هي مهنة والد نجيب المذكورة في كتاب 4PS؟',
+    questionEn: 'What is the job of Nadjib’s father in the textbook?',
+    options: [
+      { id: 'a', text: 'Carpenter (نجار)', emoji: '🪚', ar: 'نجار يصنع الأثاث' },
+      { id: 'b', text: 'Pilot (طيار)', emoji: '✈️', ar: 'يقود الطائرة' },
+      { id: 'c', text: 'Baker (خباز)', emoji: '🥖', ar: 'يخبز الخبز' },
+      { id: 'd', text: 'Firefighter (إطفائي)', emoji: '🚒', ar: 'يطفئ الحرائق' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'والد نجيب نجار ماهر: "My father is a carpenter" (صفحة 30).',
+    timeLimitSec: 15,
+  },
+
+  // Unit 4: Healthy Food & Algerian Meals
+  {
+    id: 'mp-9',
+    unitNumber: 4,
+    category: 'الأطعمة الصحية',
+    questionAr: 'الطبق الجزائري التقليدي اللذيذ المصنوع من الخضار واللحم يوم الجمعة هو:',
+    questionEn: 'The traditional Algerian Friday dish with vegetables and meat is:',
+    options: [
+      { id: 'a', text: 'Couscous', emoji: '🍲', ar: 'كسكسي' },
+      { id: 'b', text: 'Pizza', emoji: '🍕', ar: 'بيتزا' },
+      { id: 'c', text: 'Sandwich', emoji: '🥪', ar: 'شطيرة' },
+      { id: 'd', text: 'Ice cream', emoji: '🍦', ar: 'مثلجات' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'الكسكسي (Couscous) هو الطبق الصحي الشهير الذي تحضره أم نجيب يوم الجمعة.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-10',
+    unitNumber: 4,
+    category: 'الفواكه والخضار',
+    questionAr: 'أي من الأطعمة التالية يعتبر "Healthy Food" (طعاماً صحياً ومغذياً)؟',
+    questionEn: 'Which of the following is healthy food?',
+    options: [
+      { id: 'a', text: 'Fresh apples and oranges', emoji: '🍎', ar: 'تفاح وبرتقال طازج' },
+      { id: 'b', text: 'Lollipops and sweets', emoji: '🍭', ar: 'حلويات وسكاكر مفرطة' },
+      { id: 'c', text: 'Fizzy soda drinks', emoji: '🥤', ar: 'مشروبات غازية' },
+      { id: 'd', text: 'Potato chips every day', emoji: '🍟', ar: 'رقائق شيبس دهنية' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'الفواكه والخضار والماء هي أطعمة صحية ومفيدة جداً لجسم التلميذ.',
+    timeLimitSec: 15,
+  },
+
+  // Unit 5: Games & Sports
+  {
+    id: 'mp-11',
+    unitNumber: 5,
+    category: 'الألعاب والرياضة',
+    questionAr: 'ما هي اللعبة الشعبية التي تسمى "Hide and seek" في كتاب التلميذ؟',
+    questionEn: 'What is "Hide and seek" in Arabic?',
+    options: [
+      { id: 'a', text: 'لعبة الغميضة (الاستغماية)', emoji: '🙈', ar: 'Hide and seek' },
+      { id: 'b', text: 'لعبة الحبل (Skipping rope)', emoji: '🪢', ar: 'نط الحبل' },
+      { id: 'c', text: 'كرة القدم (Football)', emoji: '⚽', ar: 'كرة القدم' },
+      { id: 'd', text: 'ألعاب الفيديو (Video games)', emoji: '🎮', ar: 'ألعاب الفيديو' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'Hide and seek تعني لعبة الغميضة والبحث عن الرفاق.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-12',
+    unitNumber: 5,
+    category: 'الرياضة والنشاط',
+    questionAr: 'أكمل الجملة: "I like playing _______ with my friends in the school yard."',
+    questionEn: 'Complete: "I like playing _______ with my friends."',
+    options: [
+      { id: 'a', text: 'Football', emoji: '⚽', ar: 'كرة القدم' },
+      { id: 'b', text: 'Book', emoji: '📖', ar: 'كتاب' },
+      { id: 'c', text: 'Desk', emoji: '🪑', ar: 'طاولة' },
+      { id: 'd', text: 'Pencil', emoji: '✏️', ar: 'قلم' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'نلعب كرة القدم (Football) في ساحة المدرسة.',
+    timeLimitSec: 15,
+  },
+
+  // Unit 6: National Celebrations & Algerian Patriotism
+  {
+    id: 'mp-13',
+    unitNumber: 6,
+    category: 'المناسبات والأعياد الوطنية',
+    questionAr: 'في أي تاريخ يحتفل تلاميذ الجزائر بـ "Martyr’s Day" (يوم الشهيد)؟',
+    questionEn: 'When do Algerians celebrate Martyr’s Day?',
+    options: [
+      { id: 'a', text: 'February 18th (18 فيفري)', emoji: '🇩🇿', ar: '18 فيفري' },
+      { id: 'b', text: 'July 5th (5 جويلية)', emoji: '🎉', ar: 'عيد الاستقلال' },
+      { id: 'c', text: 'November 1st (1 نوفمبر)', emoji: '🕊️', ar: 'عيد الثورة' },
+      { id: 'd', text: 'January 1st (1 جانفي)', emoji: '📅', ar: 'رأس السنة' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'يوم الشهيد هو 18 فيفري (February 18th) المذكور في نص صفحة 73.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-14',
+    unitNumber: 6,
+    category: 'الأعياد الوطنية',
+    questionAr: 'ماذا يرفع تلاميذ المدرسة بفخر عند إنشاد النشيد الوطني؟',
+    questionEn: 'What do pupils raise proudly during the national anthem?',
+    options: [
+      { id: 'a', text: 'The Algerian Flag', emoji: '🇩🇿', ar: 'العلم الجزائري' },
+      { id: 'b', text: 'Their pencils', emoji: '✏️', ar: 'أقلامهم' },
+      { id: 'c', text: 'Their school bags', emoji: '🎒', ar: 'محافظهم' },
+      { id: 'd', text: 'Their jackets', emoji: '🧥', ar: 'معاطفهم' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'العلم الجزائري هو "The Algerian Flag" ذو الألوان الأخضر والأبيض والنجمة والهلال.',
+    timeLimitSec: 15,
+  },
+
+  // Unit 7: Clothes & Seasons
+  {
+    id: 'mp-15',
+    unitNumber: 7,
+    category: 'الملابس والطقس',
+    questionAr: 'ماذا نرتدي في فصل الشتاء عندما يكون الطقس بارداً وماطراً؟',
+    questionEn: 'What do we wear in winter when it is cold and rainy?',
+    options: [
+      { id: 'a', text: 'Warm coat and boots', emoji: '🧥', ar: 'معطف دافئ وحذاء شتوي' },
+      { id: 'b', text: 'T-shirt and shorts', emoji: '🩳', ar: 'قميص صيفي وسروال قصير' },
+      { id: 'c', text: 'Swimsuit', emoji: '🩱', ar: 'لباس سباحة' },
+      { id: 'd', text: 'Sun hat only', emoji: '👒', ar: 'قبعة شمسية' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'في الشتاء نرتدي Warm coat (معطفاً دافئاً) وBoots.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-16',
+    unitNumber: 7,
+    category: 'الملابس التقليدية',
+    questionAr: 'ما هو اللباس الجزائري التقليدي الأصيل المذكور في كتاب 4PS؟',
+    questionEn: 'Which traditional Algerian dress is in the 4PS textbook?',
+    options: [
+      { id: 'a', text: 'Djellaba & Burnous', emoji: '👘', ar: 'الجلابة والبرنوس الجزائري' },
+      { id: 'b', text: 'Kimono', emoji: '🥋', ar: 'كيمونو ياباني' },
+      { id: 'c', text: 'Sari', emoji: '🥻', ar: 'ساري هندي' },
+      { id: 'd', text: 'Poncho', emoji: '🧣', ar: 'بونشو' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'البرنوس والجلابة والقندورة هي ألبسة تقليدية جزائرية أصيلة.',
+    timeLimitSec: 15,
+  },
+
+  // Unit 8: Animals & Nature
+  {
+    id: 'mp-17',
+    unitNumber: 8,
+    category: 'الحيوانات والطبيعة',
+    questionAr: 'حيوان الصحراء الجزائرية الشهير صاحب الأذنين الكبيرتين هو:',
+    questionEn: 'The famous Algerian desert animal with large ears is:',
+    options: [
+      { id: 'a', text: 'Fennec fox', emoji: '🦊', ar: 'الفنك الصحراوي' },
+      { id: 'b', text: 'Penguin', emoji: '🐧', ar: 'البطريق' },
+      { id: 'c', text: 'Polar bear', emoji: '🐻‍❄️', ar: 'الدب القطبي' },
+      { id: 'd', text: 'Elephant', emoji: '🐘', ar: 'الفيل' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'الفنك (Fennec fox) هو حيوان الصحراء الجزائرية الأيقوني ورمز المنتخب الوطني.',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-18',
+    unitNumber: 8,
+    category: 'الحيوانات',
+    questionAr: 'كيف نقول "جمل الصحراء سفينة الصحراء" بالإنجليزية؟',
+    questionEn: 'What is the English word for camel?',
+    options: [
+      { id: 'a', text: 'Camel', emoji: '🐪', ar: 'جمل' },
+      { id: 'b', text: 'Horse', emoji: '🐎', ar: 'حصان' },
+      { id: 'c', text: 'Sheep', emoji: '🐑', ar: 'خروف' },
+      { id: 'd', text: 'Cow', emoji: '🐄', ar: 'بقرة' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'الجمل هو Camel.',
+    timeLimitSec: 15,
+  },
+
+  // Unit 9: Algerian Cities & Geography
+  {
+    id: 'mp-19',
+    unitNumber: 9,
+    category: 'المدن والولايات الجزائرية',
+    questionAr: 'أين يسكن التلميذ نجيب وفق ما ذكره في كتاب 4PS (صفحة 95)؟',
+    questionEn: 'Where does Nadjib live according to the 4PS textbook?',
+    options: [
+      { id: 'a', text: 'In Chlef (ولاية الشلف)', emoji: '🇩🇿', ar: 'يسكن في الشلف' },
+      { id: 'b', text: 'In London', emoji: '🇬🇧', ar: 'في لندن' },
+      { id: 'c', text: 'In Paris', emoji: '🗼', ar: 'في باريس' },
+      { id: 'd', text: 'In New York', emoji: '🗽', ar: 'في نيويورك' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'نجيب يقول بوضوح: "I am Algerian and I live in Chlef" (أنا جزائري وأسكن بالشلف).',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-20',
+    unitNumber: 9,
+    category: 'الولايات الجزائرية',
+    questionAr: 'مدينة الجسور المعلقة الشهيرة في شرق الجزائر هي:',
+    questionEn: 'The city of suspension bridges in eastern Algeria is:',
+    options: [
+      { id: 'a', text: 'Constantine (قسنطينة)', emoji: '🌉', ar: 'قسنطينة عاصمة الشرق' },
+      { id: 'b', text: 'Oran (وهران)', emoji: '🌊', ar: 'الباهية وهران' },
+      { id: 'c', text: 'Algiers (الجزائر العاصمة)', emoji: '🏛️', ar: 'البهجة العاصمة' },
+      { id: 'd', text: 'Ghardaia (غرداية)', emoji: '🏜️', ar: 'وادي ميزاب غرداية' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'قسنطينة هي مدينة الجسور المعلقة (City of Bridges).',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-21',
+    unitNumber: 1,
+    category: 'المشاعر والأحاسيس',
+    questionAr: 'عندما تفوز في تحدي الإنجليزية، تقول: "I am _______!"',
+    questionEn: 'When you win in English, you say: "I am _______!"',
+    options: [
+      { id: 'a', text: 'Happy and proud', emoji: '😄', ar: 'سعيد وفخور' },
+      { id: 'b', text: 'Sad', emoji: '😢', ar: 'حزين' },
+      { id: 'c', text: 'Angry', emoji: '😡', ar: 'غاضب' },
+      { id: 'd', text: 'Sleepy', emoji: '🥱', ar: 'نعسان' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'عند الفوز والإنجاز نكون Happy (سعداء) وProud (فخورين).',
+    timeLimitSec: 15,
+  },
+  {
+    id: 'mp-22',
+    unitNumber: 4,
+    category: 'الصحة والنشاط',
+    questionAr: 'ما هو المشروب الطبيعي الأفضل لجسم التلميذ كل يوم؟',
+    questionEn: 'What is the best daily natural drink for pupils?',
+    options: [
+      { id: 'a', text: 'Pure clean water', emoji: '💧', ar: 'ماء نقي ونظيف' },
+      { id: 'b', text: 'Fizzy soda drinks', emoji: '🥤', ar: 'مشروبات غازية سكرية' },
+      { id: 'c', text: 'Energy drinks', emoji: '⚡', ar: 'مشروبات طاقة مضرة' },
+      { id: 'd', text: 'Artificial colored syrup', emoji: '🧪', ar: 'شراب صناعي' },
+    ],
+    correctAnswerId: 'a',
+    explanationAr: 'الماء (Water) هو سر صحة ونشاط وتركيز التلميذ في المدرسة.',
+    timeLimitSec: 15,
+  },
+];

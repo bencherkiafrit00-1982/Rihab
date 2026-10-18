@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+  padding-left: var(--sal);
+  padding-right: var(--sar);
+}
+
+@layer base {
+  body {
+    font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-english {
+    font-family: 'Fredoka', 'Tajawal', cursive, sans-serif;
+  }
+}
+
+/* Custom scrollbars for responsive modal bodies */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Duolingo 3D Button Effects */
+.btn-duo-green {
+  background-color: #58CC02;
+  border-bottom: 4px solid #46A302;
+  transition: all 0.1s ease;
+}
+.btn-duo-green:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+.btn-duo-blue {
+  background-color: #1CB0F6;
+  border-bottom: 4px solid #1899D6;
+  transition: all 0.1s ease;
+}
+.btn-duo-blue:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+.btn-duo-yellow {
+  background-color: #FFC800;
+  border-bottom: 4px solid #E5A500;
+  transition: all 0.1s ease;
+}
+.btn-duo-yellow:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+.btn-duo-red {
+  background-color: #FF4B4B;
+  border-bottom: 4px solid #EA2B2B;
+  transition: all 0.1s ease;
+}
+.btn-duo-red:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+.btn-duo-purple {
+  background-color: #CE82FF;
+  border-bottom: 4px solid #A54BF5;
+  transition: all 0.1s ease;
+}
+.btn-duo-purple:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+.btn-duo-neutral {
+  background-color: #FFFFFF;
+  border-bottom: 4px solid #E5E5E5;
+  transition: all 0.1s ease;
+}
+.btn-duo-neutral:active:not(:disabled) {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+}
+
+/* Wiggle animation for mascots & rewards */
+@keyframes duo-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-duo-bounce {
+  animation: duo-bounce 2s infinite ease-in-out;
+}

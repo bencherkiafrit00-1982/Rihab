@@ -1,0 +1,6 @@
+{
+  "name": "رحلة رحاب لتعلم الإنجليزية (4PS)",
+  "description": "تطبيق تعليمي تفاعلي لتعليم اللغة الإنجليزية لتلاميذ السنة الرابعة ابتدائي وفق المنهاج الجزائري الرسمي بأسلوب اللعب التفاعلي (Gamification).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
